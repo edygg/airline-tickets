@@ -1,12 +1,5 @@
 source 'https://rubygems.org'
 
-
-# twitter bootstrap
-gem 'twitter-bootstrap-rails'
-
-#devise
-gem 'devise'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
@@ -33,6 +26,18 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+# Twitter Bootstrap Official Gem
+gem 'bootstrap-sass'
+
+# Devise for user login
+gem 'devise'
+
+# Puma Server
+gem "puma"
+
+# Font Awesome Icons
+gem 'font-awesome-sass'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
