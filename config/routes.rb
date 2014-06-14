@@ -1,4 +1,6 @@
 Airlines::Application.routes.draw do
+  resources :class_types
+
   resources :categories
 
   resources :tickets
