@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140613055622) do
+ActiveRecord::Schema.define(version: 20140614203940) do
 
   create_table "airplanes", force: true do |t|
     t.string   "model"
@@ -39,6 +39,33 @@ ActiveRecord::Schema.define(version: 20140613055622) do
     t.datetime "updated_at"
   end
 
+  create_table "clients", force: true do |t|
+    t.string   "email",                             default: "", null: false
+    t.string   "encrypted_password",                default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                     default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "first_name",             limit: 15
+    t.string   "middle_name",            limit: 15
+    t.string   "last_name",              limit: 20
+    t.date     "birthday"
+    t.string   "No_passport",            limit: 20
+    t.string   "nationality"
+    t.string   "credit_card"
+    t.date     "exp_credit_card"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "admin"
+  end
+
+  add_index "clients", ["email"], name: "index_clients_on_email", unique: true, using: :btree
+  add_index "clients", ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true, using: :btree
+
   create_table "schedules", force: true do |t|
     t.integer  "departure_city_id"
     t.integer  "arrival_city_id"
@@ -62,12 +89,6 @@ ActiveRecord::Schema.define(version: 20140613055622) do
     t.integer  "class_type_id"
     t.date     "departure_date"
     t.date     "return_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "types", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
