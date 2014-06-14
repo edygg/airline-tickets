@@ -30,6 +30,7 @@
           <% end %>
              <!-- opciones  si no es admin-->
             <li class="divider"></li>
+             <li> <%= link_to 'edit client', edit_client_registration_path %>   </li>
              <li> <%= link_to 'Sign out', destroy_client_session_path, :method => :delete %>   </li>
           </ul>      
 

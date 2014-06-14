@@ -18,6 +18,56 @@
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
+  
+  <div><%= f.label :first_name %><br />
+  <%= f.text_field :first_name, autofocus: true %></div>
+
+  <div><%= f.label :middle_name %><br />
+  <%= f.text_field :middle_name, autofocus: true %></div>
+
+    <div><%= f.label :last_name %><br />
+  <%= f.text_field :last_name, autofocus: true %></div>
+  
+  <div><%= f.label :birthday %><br />
+  <%= f.date_field :birthday, autofocus: true %></div>
+
+   <div><%= f.label :No_passport %><br />
+  <%= f.text_field :No_passport, autofocus: true %></div>
+
+   <div><%= f.label :credit_card %><br />
+  <%= f.text_field :credit_card, autofocus: true %></div>
+
+  <div><%= f.label :exp_credit_card %><br />
+  <%= f.date_field :exp_credit_card, autofocus: true %></div>
+
+   <div> <%= f.label :'nationality' %>
+             <%= f.select :'nationality', options_for_select([ "Afganistán", "Albania", "Alemania",
+               "Andorra", "Angola", "Anguilla" , "Antártida", "Antigua", "Antillas Holandesas", "Arabia Saudí", "Argelia", "Argentina", "Armenia",
+               "Aruba", "Australia", "Austria" , "Azerbaiyán", "Bahamas", "Bahrein", "Bangladesh", "Barbados", "Bélgica", "Belice" , 
+               "Benin", "Bermudas", "Bielorrusia" , "Birmania", "Bolivia", "Bosnia y Herzegovina", "Botswana", "Brasil", "Brunei", "Bulgaria",
+               "Burkina Faso", "Burundi", "Bután" , "Cabo Verde", "Camboya", "Camerún", "Canadá", "Chad", "Chile", "China",
+               "Chipre", "Colombia", "Comores" , "Congo", "Corea", "Corea del Norte", "Costa de Marfíl", "Costa Rica", "Croacia (Hrvatska)", "Cuba",  
+               "Dinamarca", "Djibouti", "Dominica" , "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Eritrea", "Eslovenia", "España",
+               "Estados Unidos", "Estonia", "Etiopía" , "Filipinas", "Finlandia", "Francia", "Gabón", "Gambia", "Georgia", "Ghana",
+               "Gibraltar", "Granada", "Grecia" , "Groenlandia", "Guadalupe", "Guam", "Guatemala", "Guayana", "Guinea", "Haití",
+               "Hungría", "Honduras", "India", "Indonesia" , "Irak", "Irán", "Irlanda", "Isla Bouvet", "Islandia", "Islas Caimán", "Islas Caimán",
+               "Israel", "Italia", "Jamaica" , "Japón", "Jordania", "Kazajistán", "Kenia", "Kirguizistán", "Kiribati", "Kuwait",
+               "Lesotho", "Letonia", "Líbano" , "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Madagascar", "Macedonia",
+               "Malasia", "Malawi", "Maldivas" , "Malí", "Malta", "Marruecos", "Martinica", "Mauricio", "Mauritania", "Mayotte",
+               "México", "Micronesia", "Moldavia" , "Mónaco", "Mongolia", "Montserrat", "Mozambique", "Namibia", "Nauru", "Nepal",
+               "Nicaragua", "Níger", "Nigeria" , "Niue", "Norfolk", "Noruega", "Nueva Caledonia", "Nueva Zelanda", "Omán", "Países Bajos",
+               "Panamá", "Papúa Nueva Guinea", "Paquistán" , "Paraguay", "Perú", "Pitcairn", "Polinesia Francesa", "Polonia", "Portugal", "Puerto Rico",
+               "Reino Unido", "República Centroafricana", "República Checa" , "República de Sudáfrica", "República Dominicana", "República Eslovaca", "Reunión", "Ruanda", "Rumania", "Kuwait",
+               "Rusia", "Sahara Occidental", "Saint Kitts y Nevis" , "Samoa", "Samoa Americana", "San Marino", "Senegal", "Seychelles", "Sierra Leona", "Singapur",
+               "Siria", "Somalia", "Suazilandia" , "Sudán", "Suiza", "Surinam", "Tailandia", "Taiwán", "Tanzania", "Tayikistán", 
+               "Trinidad y Tobago", "Túnez", "Turkmenistán" , "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán", "Vanuatu",
+                "Venezuela", "Vietnam", "Yemen" , "Yugoslavia", "Zambia", "Zimbabue"], "Honduras") %> <br/>   
+
+    </div>
+
+     <div><%= f.label :'Admin' %>
+                 <%= f.select :'admin', {"yes" => true, "no" => false}%> <br/>  
+     </div>
 
   <div><%= f.submit "Update" %></div>
 <% end %>
