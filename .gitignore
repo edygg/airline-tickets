@@ -16,3 +16,4 @@
 /tmp
 [Tt]humbs.db
 *.DS_Store
+/db/schema.rb
