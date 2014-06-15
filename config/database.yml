@@ -13,6 +13,7 @@ development:
   encoding: utf8
   database: airlines_development
   pool: 5
+  #username: root
   username: airline_user
   password: air1234
   socket: /tmp/mysql.sock

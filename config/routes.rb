@@ -1,4 +1,9 @@
 Airlines::Application.routes.draw do
+  
+  devise_for :clients
+
+  resources :clients
+  
   resources :class_types
 
   resources :categories

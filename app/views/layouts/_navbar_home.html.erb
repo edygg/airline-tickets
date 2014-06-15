@@ -4,18 +4,47 @@
         <%= image_tag 'logo-teguz.png', alt: 'Logo', id: 'logo-teguz' %>
       <% end %>
   </div>
- 
+
   <ul class="nav navbar-nav navbar-right">
     <li><%= link_to 'Search flights', '' %></li>
-    <!-- Admins -->
-    <li><%= link_to 'Cities', '' %></li>
-    <li><%= link_to 'Airplanes', '' %></li>
-    <li><%= link_to 'Schedules', '' %></li>
-    <li><%= link_to 'Categories', '' %></li>
-    <li><%= link_to 'Class Types', '' %></li>
+    
+    <% if client_signed_in? %>
+      <% if current_client.try(:admin) %>
+        <li><%= link_to 'Cities', '' %></li>
+        <li><%= link_to 'Airplanes', '' %></li>
+        <li><%= link_to 'Schedules', '' %></li>
+        <li><%= link_to 'Categories', '' %></li>
+        <li><%= link_to 'Class Types', '' %></li>
+      <% end %>
+      <li>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= icon 'caret-down', current_client.email %></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Sign out', destroy_client_session_path, method: :delete %></li>
+        </ul>
+      </li>
 
-    <!-- Log in and other optionsm -->
-    <!-- Sign in button -->
-    <!-- Sign up button -->
+      <% else %>
+      <li><%= link_to 'Sign up', new_client_registration_path, class: 'btn btn-primary navbar-btn' %></li>
+      <li>
+        <%= link_to '#', class: 'dropdown-toggle btn btn-info', data: { toggle: 'dropdown' }  do %>
+          <%= icon 'caret-down', 'Sign in' %>
+        <% end %>
+
+        <div class="dropdown-menu sign-in-form">
+          <%= form_for(:client, url: session_path(:client), class: 'form-horizontal') do |f| %>
+            <div class="form-group">
+              <%= f.text_field :email, autofocus: true, placeholder: 'Email', class: 'form-control input-sm' %>
+            </div>
+            <div class="form-group">
+              <%= f.password_field :password, placeholder: 'Password', class: 'form-control input-sm' %>
+            </div>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+            <%= f.submit 'Sign in', class: 'btn btn-success btn-sm' %><br><br>
+            <%= link_to "Forgot your password?", new_password_path(:client), class: 'btn btn-warning btn-sm' %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
   </ul>
 </nav>
