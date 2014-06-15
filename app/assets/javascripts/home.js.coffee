@@ -3,16 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 initialize = ->
-	$('.keep-open').on
-	    "shown.bs.dropdown": ->
-	    	$(@).data('closable', false)
-	    	return
-	    "click": ->            
-	    	$(@).data('closable', true)
-	    	return
-	    "hide.bs.dropdown": ->  
-	    	return $(@).data('closable')
-	return
+	allowClose = false
+	$('.keep-open').on 'shown.bs.dropdown', ->
+	    allowClose = true;
+
+	$('.keep-open').on 'click', ->
+	    allowClose = false;
+
+	$('.keep-open').on 'hide.bs.dropdown', ->
+	    if not allowClose 
+	    	return false
 
 $(document).on 'page:load', initialize
 	

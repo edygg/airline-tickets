@@ -24,8 +24,8 @@
   <div><%= f.label :birthday %><br />
   <%= f.date_field :birthday, autofocus: true %></div>
 
-   <div><%= f.label :No_passport %><br />
-  <%= f.text_field :No_passport, autofocus: true %></div>
+   <div><%= f.label :passport_number %><br />
+  <%= f.text_field :passport_number, autofocus: true %></div>
 
    <div><%= f.label :credit_card %><br />
   <%= f.text_field :credit_card, autofocus: true %></div>
@@ -58,8 +58,9 @@
 
     </div>
 
-     <div><%= f.label :'Admin' %>
-                 <%= f.select :'admin', {"yes" => true, "no" => false}%> <br/>  
+     <div>
+      <%= f.label :admin %>
+       <%= f.select :admin, {"yes" => true, "no" => false}%> <br/>  
      </div>
 
 

@@ -35,7 +35,7 @@ class DeviseCreateClients < ActiveRecord::Migration
       t.string :middle_name, limit: 15
       t.string :last_name,   limit: 20
       t.date   :birthday
-      t.string :No_passport, limit: 20
+      t.string :passport_number, limit: 20
       t.string :nationality, limil: 20
       t.string :credit_card
       t.date :exp_credit_card

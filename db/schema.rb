@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140614203940) do
     t.string   "middle_name",            limit: 15
     t.string   "last_name",              limit: 20
     t.date     "birthday"
-    t.string   "No_passport",            limit: 20
+    t.string   "passport_number",        limit: 20
     t.string   "nationality"
     t.string   "credit_card"
     t.date     "exp_credit_card"
