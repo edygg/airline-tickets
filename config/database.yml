@@ -13,9 +13,9 @@ development:
   encoding: utf8
   database: airlines_development
   pool: 5
-  username: root
-  #password: air1234
-  #socket: /tmp/mysql.sock
+  username: airline_user
+  password: air1234
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

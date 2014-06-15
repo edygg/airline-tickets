@@ -14,5 +14,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-/config/*.yml
+[Tt]humbs.db
+*.DS_Store

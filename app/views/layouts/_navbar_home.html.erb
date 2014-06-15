@@ -1,72 +1,46 @@
 <nav class="navbar col-md-10 col-md-offset-1" id="navbar-home">
   <div class="navbar-header">
-    <div class="navbar-brand">
       <%= link_to root_path do %>
-        <%= image_tag '', alt: 'Logo' %>
+        <%= image_tag 'logo-teguz.png', alt: 'Logo', id: 'logo-teguz' %>
       <% end %>
-    </div>
   </div>
 
   <ul class="nav navbar-nav navbar-right">
     <li><%= link_to 'Search flights', '' %></li>
-    <!-- Admins -->
-    <li><%= link_to 'Cities', '' %></li>
-    <li><%= link_to 'Airplanes', '' %></li>
-    <li><%= link_to 'Schedules', '' %></li>
-    <li><%= link_to 'Categories', '' %></li>
-    <li><%= link_to 'Class Types', '' %></li>
-    <ul class="nav pull-right">
-     <li> <%= link_to 'Sign Up', new_client_registration_path  %></li> 
-      <li class="divider-vertical"></li> 
-      <li class="dropdown">
-
-        <% if client_signed_in? %>  
-
-           <a class="dropdown-toggle" href="#" data-toggle="dropdown"><%= current_client.email %> <strong class="caret"></strong> </a>
-           <ul class="dropdown-menu">              
-           <% if current_client.admin? %> 
-                            
-                   <!-- opciones  si es admin-->
-          <% end %>
-             <!-- opciones  si no es admin-->
-            <li class="divider"></li>
-             <li> <%= link_to 'edit client', edit_client_registration_path %>   </li>
-             <li> <%= link_to 'Sign out', destroy_client_session_path, :method => :delete %>   </li>
-          </ul>      
-
-        <% else %>
-        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-        <div class="dropdown-menu" style="padding: 15px; padding-bottom: 13px;"> 
-          <!-- Login form here -->
-
-        <form accept-charset="UTF-8" action="/clients/sign_in" class="new_client" id="new_client" method="post">
-          <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="rCH98Z+EhF6/kRdYO33p00FXknXS3aN2ftUCl4YzD0o=" /></div>
-          <div>
-            <input autofocus="autofocus" id="client_email" name="client[email]" type="email" value="" style="margin-bottom: 15px; color: black;" size="30" placeholder="client email" />      
-          </div>
-          <div>
-             <input autocomplete="off" id="client_password" name="client[password]" type="password" style="margin-bottom: 15px; color: black;" size="30"  placeholder="client password" />          
-          </div>
-          <div>
-            <input name="client[remember_me]" type="hidden" value="0" /><input id="client_remember_me" name="client[remember_me]" type="checkbox" value="1" /> <label for="client_remember_me">Remember me</label>
-          </div>
-          
-
-            <li role="presentation" class="divider"></li>
-            
-            <input class="btn btn-primary" style="clear: left; width: 100%; height: 32px; font-size: 13px;" type="submit" name="commit" value="Sign In" />
-          <% end %>
-          </form>
-        
-        </div>
-      
+    
+    <% if client_signed_in? %>
+      <% if current_client.try(:admin) %>
+        <li><%= link_to 'Cities', '' %></li>
+        <li><%= link_to 'Airplanes', '' %></li>
+        <li><%= link_to 'Schedules', '' %></li>
+        <li><%= link_to 'Categories', '' %></li>
+        <li><%= link_to 'Class Types', '' %></li>
+      <% end %>
+      <li>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= icon 'caret-down', current_client.email %></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Sign out', destroy_client_session_path, method: :delete %></li>
+        </ul>
       </li>
-    </ul>
-    <!-- Log in and other optionsm -->
-    <!-- Sign in button -->
-    <!-- Sign up button -->
+
+      <% else %>
+      <li><%= link_to 'Sign up', new_client_registration_path, class: 'btn btn-primary navbar-btn' %></li>
+      <li>
+        <%= link_to '#', class: 'dropdown-toggle keep-open btn btn-info', data: { toggle: 'dropdown' }  do %>
+          <%= icon 'caret-down', 'Sign in' %>
+        <% end %>
+
+        <div class="dropdown-menu">
+          <%= form_for(:client, :url => session_path(:client)) do |f| %>
+            <%= f.text_field :email, autofocus: true %>
+            <%= f.password_field :password %>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+            <%= f.submit 'Sign in' %>
+            <%= link_to "Forgot your password?", new_password_path(:client) %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
   </ul>
 </nav>
-
-
-
