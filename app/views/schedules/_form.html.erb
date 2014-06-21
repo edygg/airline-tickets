@@ -11,22 +11,22 @@
       </ul>
     </div>
   <% end %>
+  
   <div>
     <%= f.label :departure_city_id %><br>
     <%= f.collection_select(:departure_city_id , City.all, :id, :name) %>
-    <div>
+  </div>
 
-     <div>
+  <div>
     <%= f.label :arrival_city_id %><br>
     <%= f.collection_select(:arrival_city_id , City.all, :id, :name) %>
-    <div>
+  </div>
 
-      <div>
+  <div>
     <%= f.label :airplane_id %><br>
-    <%= f.collection_select(:airplane_id , Airplane.all, :id, :id) %>
-    <div> 
+    <%= f.collection_select(:airplane_id , Airplane.all, :id, :model) %>
+  </div> 
        
-
   <div class="field">
     <%= f.label :departure_time %><br>
     <%= f.time_select :departure_time %>

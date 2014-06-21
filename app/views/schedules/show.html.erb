@@ -11,9 +11,25 @@
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Departure City:</strong>
+  <%= City.find_by_id(@schedule.departure_city_id).name %>
+</p>
+
+<p>
+  <strong>Arrival City:</strong>
+  <%= City.find_by_id(@schedule.arrival_city_id).name %>
+</p>
+
+<p>
+  <strong>Airplane:</strong>
   <%= @schedule.price %>
 </p>
 
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>
+
+
+
+
+
+

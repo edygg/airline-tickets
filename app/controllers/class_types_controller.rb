@@ -69,6 +69,6 @@ class ClassTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def class_type_params
-      params.require(:class_type).permit(:name)
+      params.require(:class_type).permit(:name, :rate)
     end
 end
