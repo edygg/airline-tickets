@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140614203940) do
 
   create_table "airplanes", force: true do |t|
-    t.string   "model"
+    t.string   "airplane_model"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -89,12 +89,6 @@ ActiveRecord::Schema.define(version: 20140614203940) do
     t.integer  "class_type_id"
     t.date     "departure_date"
     t.date     "return_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-  
-  create_table "types", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

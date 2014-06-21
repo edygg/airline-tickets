@@ -22,9 +22,17 @@
 
 <p>
   <strong>Airplane:</strong>
+  <%= Airplane.find_by_id(@schedule.airplane_id).airplane_model %>
+</p>
+
+<p>
+  <strong>Price:</strong>
   <%= @schedule.price %>
 </p>
 
+
+
+ 
 <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
 <%= link_to 'Back', schedules_path %>
 
