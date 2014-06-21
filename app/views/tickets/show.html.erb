@@ -6,9 +6,21 @@
 </p>
 
 <p>
-  <strong>Arrival date:</strong>
-  <%= @ticket.arrival_date %>
+  <strong>Return date:</strong>
+  <%= @ticket.return_date %>
+</p>
+
+<p>
+  <strong>class type:</strong>
+  <%= ClassType.find_by_id(@ticket.class_type_id).name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= Category.find_by_id(@ticket.category_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
 <%= link_to 'Back', tickets_path %>
+
+
