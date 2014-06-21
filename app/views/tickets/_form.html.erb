@@ -16,9 +16,20 @@
     <%= f.date_select :departure_date %>
   </div>
   <div class="field">
-    <%= f.label :arrival_date %><br>
-    <%= f.date_select :arrival_date %>
+    <%= f.label :return_date %><br>
+    <%= f.date_select :return_date %>
   </div>
+
+  <div>
+    <%= f.label :category_id %><br>
+    <%= f.collection_select(:category_id , Category.all, :id, :name) %>
+ <div> 
+
+  <div>
+    <%= f.label :class_type_id %><br>
+    <%= f.collection_select(:class_type_id , ClassType.all, :id, :name) %>
+ <div> 
+
   <div class="actions">
     <%= f.submit %>
   </div>
