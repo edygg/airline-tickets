@@ -2,8 +2,9 @@
 	<p>
 		<%= form_tag(flights_show_path, :method => "get", id: "search-form") do %>
 		<p>
-			<%= text_field_tag :search, params[:search], placeholder: "City" %>
-			<%= submit_tag "Search", :departure_city_id => nil %>			
+			<%= text_field_tag :search, params[:search], placeholder: "Departure City" %>
+
+			<%= submit_tag "Search", :departure_city_id => nil%>			
 		</p>
 		<% end %>
 	</p>
