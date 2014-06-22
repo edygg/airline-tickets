@@ -1,13 +1,35 @@
-<div class="hero-unit">
-	<p>
-		<%= form_tag(flights_show_path, :method => "get", id: "search-form") do %>
-		<p>
-			<%= text_field_tag :search, params[:search], placeholder: "City" %>
-			<%= submit_tag "Search", :departure_city_id => nil %>			
-		</p>
-		<% end %>
-	</p>
+<div class="jumbotron">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#RoundTrip" data-toggle="tab">RoundTrip</a></li>
+    <li><a href="#OneWay" data-toggle="tab">One Way</a></li>
+    <li><a href="#MultipleDestinations" data-toggle="tab">Multiple Destinations</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="RoundTrip">
+        <br>
+        <%= form_tag(flights_show_path, :method => "get", id: "search-form") do %>
+			  <%= text_field_tag :search, params[:search], placeholder: "City" %>
+			  <%= submit_tag "Search", :departure_city_id => nil %>			
+		    <% end %>
+    </div>
+    
+    
+    <div class="tab-pane fade" id="OneWay">
+      <br>
+
+
+    </div>
+
+    
+    <div class="tab-pane fade" id="MultipleDestinations">
+      <br>
+    
+      
+    </div>
+  </div>
+  
 </div>
-
-
 

@@ -1,0 +1,64 @@
+
+
+<div class="jumbotron">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#RoundTrip" data-toggle="tab">RoundTrip</a></li>
+    <li><a href="#OneWay" data-toggle="tab">One Way</a></li>
+    <li><a href="#MultipleDestinations" data-toggle="tab">Multiple Destinations</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="RoundTrip">
+     <br>
+      
+      <%= form_tag("/search", method: "get") do %>
+      <div class="row">
+        <%= label_tag(:FlyingFrom, "Flying From:") %>
+        <%= text_field_tag(:FlyingFrom) %>
+        <%= label_tag(:FliyingTo, "Fliying To:") %>
+        <%= text_field_tag(:FliyingTo) %>
+      </div>
+      <div class="row">
+        <%= label_tag(:Departing, "Departing:") %>
+        <%= date_field(:Departing, :Date) %>
+        <%= label_tag(:Returning, "Returning:") %>
+        <%= date_field(:Returning, :Date) %>
+        <%= label_tag(:Adults, "Adults (+18):") %>
+        <%= number_field(:Adults, :number, in: 1..6, step: 1) %>
+        <%= label_tag(:Children, "Children (0-17):") %>
+        <%= number_field(:Children, :number, in: 1..6, step: 1) %>
+      </div>
+      <div class="row">
+        <%= label_tag(:Nonstop, "Nonstop:") %>
+        <%= check_box_tag(:Nonstop) %>
+      </div>
+        
+      <%= submit_tag("Search") %>
+      <% end %>
+      
+    </div>
+    
+    
+    <div class="tab-pane fade" id="OneWay">
+      <br>
+
+
+    </div>
+
+    
+    <div class="tab-pane fade" id="MultipleDestinations">
+      <br>
+    
+      
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
