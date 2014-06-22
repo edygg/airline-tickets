@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin_logged
 
   # GET /schedules
   # GET /schedules.json
@@ -57,6 +58,11 @@ class SchedulesController < ApplicationController
   end
 
   private
+    # Cheks if admin are signed in
+    def check_admin_logged
+      redirect_to new_client_session_path unless client_signed_in? and current_client.try(:admin)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule
       @schedule = Schedule.find(params[:id])

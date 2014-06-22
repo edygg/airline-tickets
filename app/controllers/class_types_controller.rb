@@ -1,5 +1,6 @@
 class ClassTypesController < ApplicationController
   before_action :set_class_type, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin_logged
 
   # GET /class_types
   # GET /class_types.json
@@ -62,6 +63,11 @@ class ClassTypesController < ApplicationController
   end
 
   private
+    # Cheks if admin are signed in
+    def check_admin_logged
+      redirect_to new_client_session_path unless client_signed_in? and current_client.try(:admin)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_class_type
       @class_type = ClassType.find(params[:id])
