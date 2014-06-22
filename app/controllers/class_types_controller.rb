@@ -28,7 +28,7 @@ class ClassTypesController < ApplicationController
 
     respond_to do |format|
       if @class_type.save
-        format.html { redirect_to @class_type, notice: 'Class type was successfully created.' }
+        format.html { redirect_to class_types_url, notice: 'Class type was successfully created.' }
         format.json { render action: 'show', status: :created, location: @class_type }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class ClassTypesController < ApplicationController
   def update
     respond_to do |format|
       if @class_type.update(class_type_params)
-        format.html { redirect_to @class_type, notice: 'Class type was successfully updated.' }
+        format.html { redirect_to class_types_url, notice: 'Class type was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

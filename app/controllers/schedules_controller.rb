@@ -7,11 +7,6 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.all
   end
 
-  # GET /schedules/1
-  # GET /schedules/1.json
-  def show
-  end
-
   # GET /schedules/new
   def new
     @schedule = Schedule.new
@@ -28,7 +23,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       if @schedule.save
-        format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
+        format.html { redirect_to schedules_url, notice: 'Schedule was successfully created.' }
         format.json { render action: 'show', status: :created, location: @schedule }
       else
         format.html { render action: 'new' }
@@ -42,7 +37,7 @@ class SchedulesController < ApplicationController
   def update
     respond_to do |format|
       if @schedule.update(schedule_params)
-        format.html { redirect_to @schedule, notice: 'Schedule was successfully updated.' }
+        format.html { redirect_to schedules_url, notice: 'Schedule was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

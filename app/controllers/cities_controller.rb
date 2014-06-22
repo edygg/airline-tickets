@@ -1,15 +1,11 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin_logged
 
   # GET /cities
   # GET /cities.json
   def index
     @cities = City.all
-  end
-
-  # GET /cities/1
-  # GET /cities/1.json
-  def show
   end
 
   # GET /cities/new
@@ -28,7 +24,7 @@ class CitiesController < ApplicationController
 
     respond_to do |format|
       if @city.save
-        format.html { redirect_to @city, notice: 'City was successfully created.' }
+        format.html { redirect_to cities_url, notice: 'City was successfully created.' }
         format.json { render action: 'show', status: :created, location: @city }
       else
         format.html { render action: 'new' }
@@ -42,7 +38,7 @@ class CitiesController < ApplicationController
   def update
     respond_to do |format|
       if @city.update(city_params)
-        format.html { redirect_to @city, notice: 'City was successfully updated.' }
+        format.html { redirect_to cities_url, notice: 'City was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -62,6 +58,11 @@ class CitiesController < ApplicationController
   end
 
   private
+    # Cheks if admin are signed in
+    def check_admin_logged
+      redirect_to new_client_session_path unless client_signed_in? and current_client.try(:admin)
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_city
       @city = City.find(params[:id])

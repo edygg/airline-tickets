@@ -1,27 +1,28 @@
-<h1>Listing cities</h1>
+<div class="col-md-6 col-md-offset-3">
+  <h1>Listing cities</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cities.each do |city| %>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= city.name %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @cities.each do |city| %>
+        <tr>
+          <td><%= city.name %></td>
+          <td><%= link_to 'Edit', edit_city_path(city), class: 'btn btn-sm btn-info' %></td>
+          <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New City', new_city_path %>
+  <br>
+
+  <%= link_to 'New City', new_city_path, class: 'btn btn-success' %>
+</div>
+

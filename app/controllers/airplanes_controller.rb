@@ -1,15 +1,11 @@
 class AirplanesController < ApplicationController
   before_action :set_airplane, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin_logged
 
   # GET /airplanes
   # GET /airplanes.json
   def index
     @airplanes = Airplane.all
-  end
-
-  # GET /airplanes/1
-  # GET /airplanes/1.json
-  def show
   end
 
   # GET /airplanes/new
@@ -28,7 +24,7 @@ class AirplanesController < ApplicationController
 
     respond_to do |format|
       if @airplane.save
-        format.html { redirect_to @airplane, notice: 'Airplane was successfully created.' }
+        format.html { redirect_to airplanes_url, notice: 'Airplane was successfully created.' }
         format.json { render action: 'show', status: :created, location: @airplane }
       else
         format.html { render action: 'new' }
@@ -42,7 +38,7 @@ class AirplanesController < ApplicationController
   def update
     respond_to do |format|
       if @airplane.update(airplane_params)
-        format.html { redirect_to @airplane, notice: 'Airplane was successfully updated.' }
+        format.html { redirect_to airplanes_url, notice: 'Airplane was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -62,6 +58,11 @@ class AirplanesController < ApplicationController
   end
 
   private
+    # Cheks if admin are signed in
+    def check_admin_logged
+      redirect_to new_client_session_path unless client_signed_in? and current_client.try(:admin)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_airplane
       @airplane = Airplane.find(params[:id])

@@ -1,7 +1,7 @@
-<%= form_for(@city) do |f| %>
+<%= form_for(@city, html: { class: 'form-horizontal' }) do |f| %>
   <% if @city.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</h2>
+    <div class="alert alert-warning">
+      <p><%= pluralize(@city.errors.count, "error") %> prohibited this city from being saved:</p>
 
       <ul>
       <% @city.errors.full_messages.each do |msg| %>
@@ -11,11 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, class: 'col-sm-4 control-label' %>
+    <div class="col-sm-8">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-success' %>
   </div>
 <% end %>
