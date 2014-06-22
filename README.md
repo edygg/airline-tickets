@@ -56,3 +56,4 @@ Recuerden que las migraciones se encuentran en `db/migrate/`
 * [Devise](https://github.com/plataformatec/devise). Usuarios. [Documentación](https://github.com/plataformatec/devise/blob/master/README.md)
 * [Puma Server](http://puma.io/). Servidor web concurrente.
 * [Font Awesome](https://github.com/FortAwesome/font-awesome-sass). Íconos. [Documentación](https://github.com/FortAwesome/font-awesome-sass) | [Lista de íconos](http://fortawesome.github.io/Font-Awesome/icons/)
+* [Cloudinary](https://github.com/cloudinary/cloudinary_gem). Redimensionar imágenes. [Documentación](http://cloudinary.com/documentation/rails_integration#getting_started_guide)

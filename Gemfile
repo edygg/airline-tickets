@@ -39,6 +39,9 @@ gem "puma"
 # Font Awesome Icons
 gem 'font-awesome-sass'
 
+# Cloudinary gem for resize images
+gem 'cloudinary'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

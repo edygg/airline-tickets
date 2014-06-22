@@ -16,4 +16,4 @@
 /tmp
 [Tt]humbs.db
 *.DS_Store
-/config/database.yml
+database.yml

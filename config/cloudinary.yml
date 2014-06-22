@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dodpsiyv0
+  api_key: '515347712522225'
+  api_secret: pjcF4sYRufZo278EAH1dEHtOUWY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dodpsiyv0
+  api_key: '515347712522225'
+  api_secret: pjcF4sYRufZo278EAH1dEHtOUWY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dodpsiyv0
+  api_key: '515347712522225'
+  api_secret: pjcF4sYRufZo278EAH1dEHtOUWY
+  enhance_image_tag: true
+  static_image_support: false
