@@ -11,7 +11,8 @@
         <!-- Formulario 1 -->
         <br>
         <%= form_tag(flights_show_path, :method => "get", id: "search-form") do %>
-			  <%= text_field_tag :search, params[:search], placeholder: "City" %>
+			  <%= text_field_tag :origin, params[:origin], placeholder: "Origin" %>
+        <%= text_field_tag :destination, params[:destination], placeholder: "Destination" %>
 			  <%= submit_tag "Search", :departure_city_id => nil %>			
 		    <% end %>
     </div>
