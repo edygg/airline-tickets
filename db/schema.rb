@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614203940) do
+ActiveRecord::Schema.define(version: 0) do
 
   create_table "airplanes", force: true do |t|
     t.string   "airplane_model"

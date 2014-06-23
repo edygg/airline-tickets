@@ -11,8 +11,32 @@
         <!-- Formulario 1 -->
         <br>
         <%= form_tag(flights_show_path, :method => "get") do %>
-			  <%= text_field_tag :departure_city_id, params[:departure_city_id], placeholder: "Departure City" %>
-        <%= text_field_tag :arrival_city_id, params[:arrival_city_id], placeholder: "Arrival City" %>
+        <div class="row-xs-height">
+          <%= label_tag(:flyingFrom, "Flying From") %>
+			    <%= text_field_tag :departure_city_id, params[:departure_city_id], placeholder: "Departure City" %>
+          <%= label_tag(:flyingTo, "Flying To") %>
+          <%= text_field_tag :arrival_city_id, params[:arrival_city_id], placeholder: "Arrival City" %>
+        </div>
+        <br>
+        <div class="row-xs-height">
+          <%= label_tag(:departing, "Departing") %>
+          <%= date_field(:departing, :date) %>
+          <%= label_tag(:retorning, "Retorning") %>
+          <%= date_field(:retorning, :date) %>
+        </div>
+        <br>
+        <div class="row-xs-height">
+          <%= label_tag(:adults, "Adults (+18)") %>
+          <%= number_field(:adults, :number, in: 1..6, step: 1) %>
+          <%= label_tag(:children, "Children (0-17)") %>
+          <%= number_field(:children, :number, in: 0..6, step: 1) %>
+        </div>
+        <br>
+        <div class="row-xs-height">
+          <%= label_tag(:nonstopL, "Nonstop") %>
+          <%= check_box_tag(:nonstop) %>
+          <%= label_tag(:PC, "Preferred Class") %>
+        </div>
         <br>
         <br>
         <br>
