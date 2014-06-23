@@ -22,6 +22,8 @@ Airlines::Application.routes.draw do
 
   get "flights/show"
 
+  get "flights/buy_tickets/:id"
+
   get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

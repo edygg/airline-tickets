@@ -11,14 +11,15 @@ class FlightsController < ApplicationController
         redirect_to flights_path, notice: 'Path not found' 
     end
 
-
-
     @Schedules = Schedule.find(:all, :conditions => ["departure_city_id = ? and arrival_city_id in (?)", @departure, @arrival], :order => 'price ASC')
-
     
     @classTypeId = params[:class_type]
     #@classType = ClassType.find(classTypeId.to_s).name
     
  	end
+
+  def buy_tickets
+
+  end
 end
 
