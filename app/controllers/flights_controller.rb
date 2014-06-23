@@ -19,7 +19,7 @@ class FlightsController < ApplicationController
  	end
 
   def buy_tickets
-
+    @scheduleToBuy = Schedule.find_by_id(params[:schedule_id])
   end
 end
 

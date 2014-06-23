@@ -28,8 +28,8 @@
           <td><%= City.find_by_id(schedule.arrival_city_id).name %></td>
           <td><%= Airplane.find_by_id(schedule.airplane_id).airplane_model %></td>
           <td>$<%= schedule.price %></td>
-          <td><%= ClassType.find_by_id(@classTypeId["classType"]).name %></td>
-         <!-- <td><%= link_to 'Buy',  %></td> -->
+          <td><%= ClassType.find_by_id(@classTypeId['class_type']).name %></td>
+          <td><%= link_to 'Buy', buy_tickets_path(schedule)  %></td>
         </tr>
       <% end %>
     </tbody>
