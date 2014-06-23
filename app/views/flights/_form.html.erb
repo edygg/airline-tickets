@@ -5,31 +5,25 @@
     <li><a href="#OneWay" data-toggle="tab">One Way</a></li>
     <li><a href="#MultipleDestinations" data-toggle="tab">Multiple Destinations</a></li>
   </ul>
-
   <!-- Tab panes -->
   <div class="tab-content">
     <div class="tab-pane fade in active" id="RoundTrip">
+        <!-- Formulario 1 -->
         <br>
         <%= form_tag(flights_show_path, :method => "get", id: "search-form") do %>
 			  <%= text_field_tag :search, params[:search], placeholder: "City" %>
 			  <%= submit_tag "Search", :departure_city_id => nil %>			
 		    <% end %>
     </div>
-    
-    
     <div class="tab-pane fade" id="OneWay">
       <br>
-
-
+      <!-- Formulario 2 -->
+      
     </div>
-
-    
     <div class="tab-pane fade" id="MultipleDestinations">
       <br>
-    
+      <!-- Formulario 3 -->
       
     </div>
   </div>
-  
 </div>
-

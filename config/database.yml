@@ -13,11 +13,11 @@ development:
   encoding: utf8
   database: airlines_development
   pool: 5
-  sername: root
-  password: 
-  #username: root 
+  username: airline_user
+  password: air1234
+  # username: root 
   #<-henry no borrar
-  #password: 1234 
+  # password: 1234 
   #<- henry staff no borrar
   socket: /tmp/mysql.sock
 
