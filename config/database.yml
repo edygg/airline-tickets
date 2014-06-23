@@ -15,9 +15,9 @@ development:
   pool: 5
   username: airline_user
   password: air1234
-  # username: root 
+  #username: root 
   #<-henry no borrar
-  # password: 1234 
+  #password: 1234 
   #<- henry staff no borrar
   socket: /tmp/mysql.sock
 

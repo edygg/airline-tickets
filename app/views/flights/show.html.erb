@@ -1,6 +1,6 @@
 <div class="col-md-8 col-md-offset-2">
   <h1>Schedules</h1>
-  
+
   <table class="table table-hover">
     <thead>
       <tr>
@@ -16,9 +16,14 @@
     </thead>
 
     <tbody>
-      <% @result.each do |row| %>
+      <% @Schedules.each do |schedule| %>
         <tr>
-          <td><%= row %></td>
+          <td><%= schedule.departure_time %></td>
+          <td><%= schedule.arrival_time %></td>
+          <td><%= City.find_by_id(schedule.departure_city_id).name %></td>
+          <td><%= City.find_by_id(schedule.arrival_city_id).name %></td>
+          <td><%= Airplane.find_by_id(schedule.airplane_id).airplane_model %></td>
+          <td><%= schedule.price %></td>
         </tr>
       <% end %>
     </tbody>

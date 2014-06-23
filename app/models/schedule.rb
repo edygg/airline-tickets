@@ -5,6 +5,6 @@ class Schedule < ActiveRecord::Base
 	belongs_to :airplane
 	has_and_belongs_to_many :tickets
 
-  scope :search, ->(departure) { where(departure_city_id: City.find_by_name(departure) ) }
+  #scope :search, ->(departure) { where(departure_city_id: City.find_by_name(departure) ) }
 
 end
