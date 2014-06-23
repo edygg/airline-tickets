@@ -13,8 +13,10 @@ development:
   encoding: utf8
   database: airlines_development
   pool: 5
-  username: airline_user
-  password: air1234
+  #username: airline_user
+  #password: air1234
+  username: root
+  password: 1234
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and

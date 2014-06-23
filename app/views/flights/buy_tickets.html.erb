@@ -9,7 +9,11 @@
         <th>Departure City</th>
         <th>Arrival City</th>
         <th>Airplane</th>
-        <th>Price</th>
+        <th>Name</th>
+        <th>Nationality</th>
+        <th>Credit Card</th>
+        <th>Exp Credit Card</th>
+        <th>Emil</th>
         <th></th>
         <th></th>
         <th></th>
@@ -24,5 +28,14 @@
           <td><%= City.find_by_id(@scheduleToBuy.arrival_city_id).name %></td>
           <td><%= Airplane.find_by_id(@scheduleToBuy.airplane_id).airplane_model %></td>
           <td>$<%= @scheduleToBuy.price %></td>
+          <% if client_signed_in? %>
+          	<td><%= current_client.first_name %> 
+                <%= current_client.middle_name %> 
+          	    <%= current_client.last_name %> </td> 
+          	<td><%= current_client.nationality %> </td>
+            <td><%= current_client.credit_card %> </td>
+            <td><%= current_client.exp_credit_card %> </td>
+            <td><%= current_client.email %> </td>
+          <% end %>
     </tbody>
   </table>
