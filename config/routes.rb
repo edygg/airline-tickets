@@ -24,6 +24,8 @@ Airlines::Application.routes.draw do
 
   get "/flights/buy_tickets/:schedule_id", to: "flights#buy_tickets", as: "buy_tickets"
 
+  post "/flights/reserve/", to: "flights#reserve", as: "reserve"
+
   #get "flights/buy_tickets"
 
   get "home/index"

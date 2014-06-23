@@ -21,5 +21,10 @@ class FlightsController < ApplicationController
   def buy_tickets
     @scheduleToBuy = Schedule.find_by_id(params[:schedule_id])
   end
+
+  def reserve
+    TicketMailer.buy_ticket(current_client.email).deliver
+    redirect_to root_path, notice: 'You buy a ticket'
+  end
 end
 
