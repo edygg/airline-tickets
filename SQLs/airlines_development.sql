@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `airplanes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `airplanes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `model` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `airplane_model` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -260,4 +260,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-06-23  4:10:05
+-- Dump completed on 2014-06-23  5:16:02
