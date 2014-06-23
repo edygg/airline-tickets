@@ -36,6 +36,7 @@
           <%= label_tag(:nonstopL, "Nonstop") %>
           <%= check_box_tag(:nonstop) %>
           <%= label_tag(:PC, "Preferred Class") %>
+          <%=collection_select(:class_type, :classType, ClassType.all, :id, :name) %>
         </div>
         <br>
         <br>

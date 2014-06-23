@@ -6,10 +6,12 @@
       <tr>
         <th>Departure time</th>
         <th>Arrival time</th>
+        <th>Time</th>
         <th>Departure City</th>
         <th>Arrival City</th>
         <th>Airplane</th>
         <th>Price</th>
+        <th>Class Type</th>
         <th></th>
         <th></th>
       </tr>
@@ -20,10 +22,12 @@
         <tr>
           <td><%= schedule.departure_time.strftime("%I:%M%p") %></td>
           <td><%= schedule.arrival_time.strftime("%I:%M%p") %></td>
+          <td><%= ((schedule.arrival_time - schedule.departure_time)/60).round %></td>
           <td><%= City.find_by_id(schedule.departure_city_id).name %></td>
           <td><%= City.find_by_id(schedule.arrival_city_id).name %></td>
           <td><%= Airplane.find_by_id(schedule.airplane_id).airplane_model %></td>
           <td>$<%= schedule.price %></td>
+          <td><%= @classTypeId %></td>
         </tr>
       <% end %>
     </tbody>
